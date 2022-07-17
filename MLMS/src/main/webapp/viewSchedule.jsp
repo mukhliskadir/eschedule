@@ -130,13 +130,7 @@
        <div id="mybutton" class="button">
   <form >
    	<button    type="submit" formaction="senaraiJadual.jsp">UBAH JADUAL</button>
-   </form>  
-   <form method="post" action="ScheduleServlet">
-   <input type="hidden" name="fromDate" value="<%=startDate %>"/>
-   <input type="hidden" name="toDate" value="<%=toDate %>"/>
-   
-   	<button    type="delete" name="action" value="deleteSchedule" onclick="return confirm('Yakin untuk buang?')">BUANG</button>
-   </form>  
+</form>
 </div>
 </div>
 

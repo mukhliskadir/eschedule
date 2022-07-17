@@ -27,7 +27,7 @@
 
 <div class="content" >
     <br>
-    <h2>USRUS AKAUN</h2>
+    <h2>URUS AKAUN</h2>
     <div id="mybutton" class="button">
         <button class="add" type="add" value="add" onclick="location.href='addStaff.jsp'">TAMBAH</button>
     </div>

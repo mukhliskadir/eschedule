@@ -36,11 +36,7 @@
             <button  class="action"  type="submit" >CARI</button>
     </form>
     
-      <div id="mybutton" class="button">
-		<form >
-   				  <button    type="submit" formaction="senaraiJadual.jsp">UBAH JADUAL</button>
-         </form>
-      </div>
+      
          <form class="speaker" method="post" action="ScheduleServlet">
             <div class="schedulee">
                <table class="jaduall">
@@ -356,8 +352,14 @@
                <input type="hidden" name="scTime7" value="Dhuha">
                <input type="hidden" name="scTimes7" value="Maghrib">
             </div>
-                <input type="hidden" name="action" value="addSchedule">
-				<button type="submit" class="button button1" name="submit" onclick="return confirm('Yakin untuk simpan?')">SIMPAN</button><br><br>
+            <div id="mybutton" class="button">
+		<form >
+   				  <button    type="submit" formaction="senaraiJadual.jsp">UBAH JADUAL</button>
+   				  <input type="hidden" name="action" value="addSchedule">
+				<button type="add" class="button button1" name="submit" onclick="return confirm('Yakin untuk simpan?')">SIMPAN</button><br><br>
+         </form>
+      </div>
+                
          </form>
 
          <br />

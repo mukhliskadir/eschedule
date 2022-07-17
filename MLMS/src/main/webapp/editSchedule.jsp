@@ -54,7 +54,7 @@
             </div>
             <div class="dataa">
                 <label>  Masa</label>
-                <input type="text" name="scTime" value='c' disabled>
+                <input type="text" name="scTime" value='<%=rs.getString("scheduletime") %>' disabled>
             </div>
             <div class="dataa">
             <label>  Penceramah</label>

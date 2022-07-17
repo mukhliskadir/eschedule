@@ -119,7 +119,8 @@ public class ScheduleServlet extends HttpServlet {
         int spks7 = Integer.parseInt(request.getParameter("scSpeakers7"));
         int tpcs7 = Integer.parseInt(request.getParameter("scTopics7"));
       
-      
+        HttpSession session=request.getSession();  
+        int staffid = (Integer) session.getAttribute("staffid");
         
         Schedule sc = new Schedule();
 
@@ -179,6 +180,7 @@ public class ScheduleServlet extends HttpServlet {
         sc.setSpeakerId2_7(spks7);
         sc.setTopicId2_7(tpcs7);
         
+        sc.setStaffid(staffid);
 
         scd.addSchedule(sc);
         response.sendRedirect("senaraiJadual.jsp");
