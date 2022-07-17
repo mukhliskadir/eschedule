@@ -41,7 +41,6 @@
             <button class="add" type="add" value="add" onclick="location.href='addAnnouncement.jsp'">TAMBAH</button>
          </div>
          
-         <input type="text" id="myInput" onkeyup="cariPenceramah()" placeholder="Cari pengumuman...." title="Type in a name">    
      
          <div style="overflow-x:auto;">
             

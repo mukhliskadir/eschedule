@@ -84,7 +84,7 @@ using(topicid)
                      </td>
                        <td style="border:0px">
                         <form method="post">
-                           <button  class="action"  type="edit" formaction="editJadual.jsp?id=${result.scheduleid}"
+                           <button  class="action"  type="edit" formaction="editSchedule.jsp?id=${result.scheduleid}"
                               >KEMASKINI
                            </button>
                         </form>

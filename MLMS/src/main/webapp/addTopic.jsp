@@ -30,6 +30,8 @@
                     <option value="Fiqh">Fiqh</option>
                     <option value="Tafsir">Tafsir</option>
                     <option value="Akidah">Akidah</option>
+                    <option value="Lain-lain">Lain-lain</option>
+                    
                 </select>
             </div>
             <div id="mybutton" class="button">

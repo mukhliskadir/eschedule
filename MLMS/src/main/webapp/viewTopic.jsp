@@ -35,6 +35,7 @@
         <option value="Fiqh">Fiqh</option>
         <option value="Tafsir">Tafsir</option>
         <option value="Akidah">Akidah</option>
+        <option value="Lain-lain">Lain-lain</option>
     </select>
     <input type="button" class="tajuk" onclick="cariTajuk()" value="Cari" >
     <div style="overflow-x:auto;">

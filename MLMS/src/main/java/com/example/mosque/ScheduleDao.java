@@ -113,11 +113,12 @@ public class ScheduleDao {
 	    public boolean updateSchedule(Schedule sc) throws SQLException {
 	        boolean rowUpdated;
 	        try (Connection connection = getConnection();
-	             PreparedStatement ps = connection.prepareStatement("update schedule set speakerid=? where topicid=?");) {
+	             PreparedStatement ps = connection.prepareStatement("update schedule set scheduledate=?,speakerid=?,topicid=? where scheduleid=?");) {
 
-	        	ps.setInt(1,sc.getSpeakerId());
-		        ps.setInt(2, sc.getTopicId());
-	        	ps.setInt(3, sc.getId());
+	        	ps.setDate(1, sc.getScheduleDate());
+	        	ps.setInt(2,sc.getSpeakerId());
+		        ps.setInt(3, sc.getTopicId());
+	        	ps.setInt(4, sc.getId());
 	            rowUpdated = ps.executeUpdate() > 0;
 	        }
 	        return rowUpdated;

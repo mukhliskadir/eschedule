@@ -32,7 +32,7 @@
 	String pass = "046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e";
     String id=request.getParameter("id");
     int num=Integer.parseInt(id);
-    String sql= "select scheduleid,scheduledate,scheduletime from schedule where scheduleid='"+num+"'";
+    String sql= "select * from schedule join speaker using(speakerid) join topic using (topicid) where scheduleid='"+num+"'";
     Connection con=DriverManager.getConnection(dbURL, user, pass);
     Statement stmt=con.createStatement();
     ResultSet rs=stmt.executeQuery(sql);
@@ -50,16 +50,16 @@
             <input type="hidden" name="id" value='<%=rs.getString("scheduleid") %>'/>
             <div class="dataa">
                 <label>   Tarikh </label>
-                <input type="date" name="scDate"  value='<%=rs.getString("scheduledate") %>' disabled>
+                <input type="date" name="scDate"  value='<%=rs.getString("scheduledate") %>' >
             </div>
             <div class="dataa">
                 <label>  Masa</label>
-                <input type="text" name="scTime" value='<%=rs.getString("scheduletime") %>' disabled>
+                <input type="text" name="scTime" value='c' disabled>
             </div>
             <div class="dataa">
             <label>  Penceramah</label>
                 	<select name="scSpeaker">
-                           <option value="0">Pilih Penceramah...</option>
+                           <option value="<%=rs.getString("speakerid") %>"><%=rs.getString("speakername") %></option>
                            <c:forEach var="result" items="${oc.rows}">
                               <option value="${result.speakerid}">${result.speakername}</option>
                            </c:forEach>
@@ -68,7 +68,7 @@
             <div class="dataa">
             <label>  Tajuk</label>
                 	<select name="scTopic">
-                           <option value="0">Pilih Tajuk...</option>
+                           <option value=<%=rs.getString("topicid") %>"><%=rs.getString("topicname") %></option>
                            <c:forEach var="result" items="${oe.rows}">
                               <option value="${result.topicid}">${result.topicname}</option>
                            </c:forEach>

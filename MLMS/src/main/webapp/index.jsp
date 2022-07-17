@@ -73,7 +73,7 @@ where scheduledate >=
       (SELECT    date_trunc('week', CURRENT_DATE)::date+6 as ahad	 )
   and scheduledate <=
       (SELECT    date_trunc('week', CURRENT_DATE)::date+13- 1/86400 as sabtu)
-order by scheduleid
+order by 
 </sql:query>
 
  <sql:query dataSource="${ic}" var="od">

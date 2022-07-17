@@ -189,12 +189,14 @@ public class ScheduleServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         int spk = Integer.parseInt(request.getParameter("scSpeaker"));
         int tpc = Integer.parseInt(request.getParameter("scTopic"));
-        
+        String date = request.getParameter("scDate");
+
         Schedule sc = new Schedule();
 
         sc.setId(id);
         sc.setSpeakerId(spk);
         sc.setTopicId(tpc);
+        sc.setScheduleDate(Date.valueOf(date));
         
         scd.updateSchedule(sc);
         response.sendRedirect("senaraiJadual.jsp");
