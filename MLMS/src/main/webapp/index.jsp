@@ -136,6 +136,9 @@ where scheduledate <=
 					 <c:if test="${result.topictheme=='Akidah'}">
      						 <td style="background-color: #c2c2f0;">${result.topictheme}</td>
 					</c:if>
+					<c:if test="${result.topictheme=='Lain-lain'}">
+     						 <td style="background-color: #fff2e6;">${result.topictheme}</td>
+					</c:if>
 					 <c:if test="${result.topictheme=='-'}">
      						 <td style="background-color: black;">${result.topictheme}</td>
 					</c:if>
