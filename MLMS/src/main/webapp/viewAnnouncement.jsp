@@ -78,7 +78,7 @@
                      <td>
                         <form method="post">
                            <button  class="action"  type="edit" formaction="editAnnouncement.jsp?id=${result.announcementid}"
-                              >KEMAS	KINI
+                              >KEMASKINI
                            </button>
                         </form>
                         
