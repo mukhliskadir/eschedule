@@ -46,7 +46,7 @@ while(rs.next())
          <form class="announcement" method="post" enctype="multipart/form-data">
       <div class="dataa">
      <label>   Poster </label>
-        <input type="file"  accept="image/*" name="aPicture" id="file"  onchange="loadFile(event)" >
+        <input type="file"  accept="image/*" name="aPicture" id="file"  onchange="loadFile(event)" value='<%=rs.getString("announcementpicture") %>' >
     </div>
     <div class="dataa">
      <label>   Tajuk </label>

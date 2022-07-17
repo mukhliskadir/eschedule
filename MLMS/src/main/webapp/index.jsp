@@ -57,26 +57,25 @@
 </div>
    
    
- <sql:setDataSource var="ic" driver="org.postgresql.Driver"
+ <sql:setDataSource var="MLMS" driver="org.postgresql.Driver"
          url="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
          user = "ocetdbspxioaak"
          password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
          
-<sql:query dataSource="${ic}" var="oc">
+<sql:query dataSource="${MLMS}" var="oc">
 	select scheduleid,scheduledate,scheduletime,speakername,topicname,topictheme
 from schedule s
          join speaker q
               on s.speakerid = q.speakerid
          join topic t
               on s.topicid = t.topicid
-where scheduledate >=
-      (SELECT    date_trunc('week', CURRENT_DATE)::date+6 as ahad	 )
-  and scheduledate <=
-      (SELECT    date_trunc('week', CURRENT_DATE)::date+13- 1/86400 as sabtu)
-order by 
+where scheduledate <=
+      (SELECT    date_trunc('week', current_date)::date+13	  )
+ order by scheduledate,scheduletime
+ limit 14
 </sql:query>
 
- <sql:query dataSource="${ic}" var="od">
+ <sql:query dataSource="${MLMS}" var="od">
       select  row_number() over (order by announcementid)  "rank",announcementpicture,announcementid,announcementtitle,announcementdesc,announcementdate,announcementtime from announcement
  </sql:query>
  
