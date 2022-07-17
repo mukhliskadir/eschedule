@@ -183,8 +183,8 @@ where scheduledate <=
 
 <div class="w3-display-container mySlides">
           <img style="width:800px;height:500px;" src="${pageContext.servletContext.contextPath }/AnnouncementServlet?id=${result.announcementid}" />
-  <div class="description">
-   <p><strong>    PROGRAM :    <c:out value="${result.announcementtitle}"/></strong></p><br>	
+  <div style="font-size:20px;" class="description">
+   <p ><strong>    PROGRAM :    <c:out value="${result.announcementtitle}"/></strong></p>
          <c:out value="${result.announcementdesc}"/><br>
        TARIKH : <c:out value="${result.announcementdate}"/><br>
         JAM <c:out value="${result.announcementtime}"/><br>
