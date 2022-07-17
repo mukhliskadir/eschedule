@@ -4,13 +4,13 @@
   <artifactId>MLMS</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-    <properties>
+ <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
         <junit.version>5.7.1</junit.version>
     </properties>
-     <dependencies>
+   <dependencies>
         <dependency>
             <groupId>javax.ejb</groupId>
             <artifactId>javax.ejb-api</artifactId>
@@ -22,11 +22,6 @@
             <artifactId>javax.mvc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-<groupId>log4j</groupId>
-<artifactId>log4j</artifactId>
-<version>1.2.17</version>
-</dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -56,20 +51,14 @@
             <version>42.2.6</version>
         </dependency>
     </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>17</release>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.3</version>
-      </plugin>
-           
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -91,5 +80,5 @@
                 </executions>
             </plugin>
         </plugins>
-  </build>
+    </build>
 </project>
