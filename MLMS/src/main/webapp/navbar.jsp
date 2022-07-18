@@ -11,7 +11,8 @@
     <script src="JS/searchTable.js"></script>
 </head>
 <body>
-
+<%    if(session.getAttribute("staffid")==null)
+    response.sendRedirect("index.jsp"); %>
 <div class="sidebar">
     <div class="img"><img src="${pageContext.servletContext.contextPath }/StaffServlet?id=<%=session.getAttribute("staffid")%>"style="width:120px;height: 120px; margin-top: 50px;margin-left: 40px;border-radius: 50%;border: 2px solid black;">
     </div>
