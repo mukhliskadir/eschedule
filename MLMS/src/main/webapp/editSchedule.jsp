@@ -68,7 +68,7 @@
             <div class="dataa">
             <label>  Tajuk</label>
                 	<select name="scTopic">
-                           <option value=<%=rs.getString("topicid") %>"><%=rs.getString("topicname") %></option>
+                           <option value="<%=rs.getString("topicid") %>"><%=rs.getString("topicname") %></option>
                            <c:forEach var="result" items="${oe.rows}">
                               <option value="${result.topicid}">${result.topicname}</option>
                            </c:forEach>
