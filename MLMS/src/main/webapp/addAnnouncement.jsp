@@ -24,7 +24,7 @@
  
         	
       <div class="ANNOUNCEMENTFORM">
-  <form class="announcement" method="post" action="UploadServlet" enctype="multipart/form-data">
+  <form class="announcement" method="post" action="AnnouncementServlet" enctype="multipart/form-data">
   	
  
     <div class="dataa">
