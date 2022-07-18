@@ -31,7 +31,6 @@
     <div id="mybutton" class="button">
         <button class="add" type="add" value="add" onclick="location.href='addStaff.jsp'">TAMBAH</button>
     </div>
-    <input type="text" id="myInput" onkeyup="cariPenceramah()" placeholder="Cari penceramah.." title="Type in a name">
     <div style="overflow-x:auto;">
         <table style="text-align: center;" id="listPenceramah">
             <tr>
@@ -76,7 +75,7 @@
                 </tr>
                 </c:if>
             </c:forEach>
-           <c:if test="${sessionScope.staffrole!= 'AJK Multimedia'||sessionScope.staffrole!= 'Pengerusi'}}" > 
+<c:if test="${sessionScope['stafrfole'] == 'AJK Multimedia' || sessionScope['staffrole'] == 'Pengerusi'}">
            <div style="background-color:red; color:white;padding:10px;">
   				ANDA TIDAK MEMPUNYAI AKSES UNTUK MENGURUS AKAUN, SILA BERJUMPA PIHAK AJK MULTIMEDIA UNTUK SEBARANG PERUBAHAN.      
            </div>
