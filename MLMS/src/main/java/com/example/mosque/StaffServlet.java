@@ -184,7 +184,6 @@ public class StaffServlet extends HttpServlet {
 				// obtains input stream of the upload file
 				inputStream = filePart.getInputStream();
 			}
-	        
 	        Staff s= new Staff();
 
 	        s.setStaffName(name);

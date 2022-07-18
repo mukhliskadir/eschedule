@@ -43,7 +43,7 @@
                 <th style="width: 100px;">Tindakan</th>
             </tr>
             <c:forEach var="result" items="${staff.rows}">
-		<c:if test="${sessionScope.staffrole== 'AJK Multimedia'}" > 
+		<c:if test="${sessionScope.staffrole== 'AJK Multimedia'||sessionScope.staffrole== 'Pengerusi'}" > 
                 <tr>
                     <td >
                         <c:out value="${result.rank}"/>
@@ -62,7 +62,6 @@
                     </td>
                  
                     <td>
-                    	
                         <form method="post">
                             <button  class="action"  type="edit" formaction="staffDetails.jsp?id=${result.staffid}">LIHAT</button>
                         </form>
@@ -77,7 +76,7 @@
                 </tr>
                 </c:if>
             </c:forEach>
-           <c:if test="${sessionScope.staffrole!= 'AJK Multimedia'}" > 
+           <c:if test="${sessionScope.staffrole!= 'AJK Multimedia'||sessionScope.staffrole!= 'Pengerusi'}}" > 
            <div style="background-color:red; color:white;padding:10px;">
   				ANDA TIDAK MEMPUNYAI AKSES UNTUK MENGURUS AKAUN, SILA BERJUMPA PIHAK AJK MULTIMEDIA UNTUK SEBARANG PERUBAHAN.      
            </div>

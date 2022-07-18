@@ -59,7 +59,6 @@ String pass = "046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"
                <button  class="action"  type="edit" formaction="imam.jsp?id=<%=rs.getString("staffid") %>">TAMBAH</button>
          </form>
          <%} %>
-        
          <form method="post">
                <button  class="action"  type="edit" formaction="editStaff.jsp?id=<%=rs.getString("staffid") %>">KEMASKINI</button>
          </form>

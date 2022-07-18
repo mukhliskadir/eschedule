@@ -87,17 +87,15 @@ public class StaffDao {
         // try-with-resource statement will auto close the connection.
         try (Connection con = getConnection();
              PreparedStatement ps = con.prepareStatement
-            		 ("update staff set staffname=?,staffphoneno=?,staffusername=?,staffpass=?,supervisorid=?,staffpicture=? where staffid=?"))
+            		 ("update staff set staffname=?,staffphoneno=?,staffusername=?,staffpass=?,staffpicture=? where staffid=?"))
 
         {
         	ps.setString(1,stf.getStaffName());
         	ps.setString(2,stf.getStaffPhone());
         	ps.setString(3,stf.getStaffUsername());
         	ps.setString(4,stf.getStaffPassword());
-        	ps.setInt(5, stf.getSvid());
-            ps.setBinaryStream(6, stf.getStaffpicture());
-
-        	ps.setInt(7, stf.getId());
+            ps.setBinaryStream(5, stf.getStaffpicture());
+        	ps.setInt(6, stf.getId());
         	
 
 

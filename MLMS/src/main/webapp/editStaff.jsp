@@ -40,9 +40,10 @@
     <div class="staffform">
         <form class="staff" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value='<%=rs.getString("staffid") %>'/>
+            
         	<div class="dataa">
      		<label>   Gambar Profile </label>
-       			 <input type="file"  name="staffPic" id="file"  onchange="loadFile(event)" >
+        <input type="file"  accept="image/*" name="staffPic" id="file"  onchange="loadFile(event)"  >
    			</div>
             <div class="dataa">
                 <label>   Nama </label>
