@@ -27,10 +27,12 @@
 
 <div class="content" >
     <br>
-    <h2>URUS AKAUN</h2>
+    <h2>STAFF MASJID</h2>
+<c:if test="${sessionScope.staffrole == 'AJK Multimedia' }" >     
     <div id="mybutton" class="button">
         <button class="add" type="add" value="add" onclick="location.href='addStaff.jsp'">TAMBAH</button>
     </div>
+ </c:if>
     <div style="overflow-x:auto;">
         <table style="text-align: center;" id="listPenceramah">
             <tr>
@@ -64,7 +66,7 @@
                         <form method="post">
                             <button  class="action"  type="edit" formaction="staffDetails.jsp?id=${result.staffid}">LIHAT</button>
                         </form>
-                  <c:if test="${result.staffrole!= 'Pengerusi'}" > 
+         		<c:if test="${sessionScope.staffrole != 'Pengerusi' }" > 
                         <form method="post">
                             <input type="hidden" name="staff" value="${result.staffid}">
                             <input type="hidden" name="action" value="deleteStaff">
@@ -75,7 +77,7 @@
                 </tr>
                 </c:if>
             </c:forEach>
-<c:if test="${sessionScope['stafrfole'] == 'AJK Multimedia' || sessionScope['staffrole'] == 'Pengerusi'}">
+		<c:if test="${sessionScope.staffrole != 'AJK Multimedia' }" > 
            <div style="background-color:red; color:white;padding:10px;">
   				ANDA TIDAK MEMPUNYAI AKSES UNTUK MENGURUS AKAUN, SILA BERJUMPA PIHAK AJK MULTIMEDIA UNTUK SEBARANG PERUBAHAN.      
            </div>
