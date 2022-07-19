@@ -11,6 +11,7 @@
 <body>
 
 
+
 <%@include file="navbar.jsp"%>
 <div class="content">
     <br>
