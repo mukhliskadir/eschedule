@@ -12,14 +12,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/api/v1/speaker', (req, res) => {
   speakerDatabase('speaker]')
     .select('*')
-    .then(speaker => res.status(200).json(books))
+    .then(speaker => res.status(200).json(speaker))
     .catch(error => {
       res.status(500).json({ error: error.message, stack: error.stack });
     });
 });
 
-app.get('/api/v1/s[ealer]/:id', (req, res) => {
-  speakerDatabase('speaker')
+app.get('/api/v1/speaker/:id', (req, res) => {
+  speakerDatabase('')
     .select('*')
     .limit(1)
     .where({ speaekerid: req.params.id })
