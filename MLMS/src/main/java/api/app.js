@@ -19,11 +19,11 @@ app.get('/api/v1/speaker', (req, res) => {
     });
 });
 
-app.get('/api/v1/speaker/:id', (req, res) => {
+app.get('/api/v1/speaker/:speakerid', (req, res) => {
   speakerDatabase('speaker')
     .select('*')
     .limit(1)
-    .where({ speaekerid: req.params.id })
+    .where({ speaekerid: req.params.speakerid })
     .then(speaker => res.status(200).json(speaker))
     .catch(error => {
       res.status(500).json({ error: error.message, stack: error.stack });
