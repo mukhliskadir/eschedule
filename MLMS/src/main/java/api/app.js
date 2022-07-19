@@ -19,7 +19,7 @@ app.get('/api/v1/speaker', (req, res) => {
 });
 
 app.get('/api/v1/speaker/:id', (req, res) => {
-  speakerDatabase('')
+  speakerDatabase('speaker')
     .select('*')
     .limit(1)
     .where({ speaekerid: req.params.id })
