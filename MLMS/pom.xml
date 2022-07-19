@@ -55,6 +55,13 @@
 
     <build>
         <plugins>
+        <plugin>
+      <groupId>com.seovic.maven.plugins</groupId>
+      <artifactId>npm-maven-plugin</artifactId>
+      <version>1.0.4</version>
+      <extensions>true</extensions>
+    </plugin>
+       
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
