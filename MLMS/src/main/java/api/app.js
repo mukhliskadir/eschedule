@@ -9,6 +9,7 @@ app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 app.get('/api/v1/speaker', (req, res) => {
   speakerDatabase('speaker]')
     .select('*')
