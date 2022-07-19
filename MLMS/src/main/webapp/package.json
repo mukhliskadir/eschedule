@@ -1,0 +1,27 @@
+{
+  "name": "books-read-api",
+  "version": "1.0.0",
+  "description": "A RESTful API to keep track of books that I've read. ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Knex",
+    "API"
+  ],
+  "author": "Kim Schlesinger",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.1"
+  }
+}
