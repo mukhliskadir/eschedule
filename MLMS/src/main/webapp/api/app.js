@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/api/v1/speaker', (req, res) => {
-  speakerDatabase('speaker]')
+  speakerDatabase('speaker')
     .select('*')
     .then(speaker => res.status(200).json(speaker))
     .catch(error => {
