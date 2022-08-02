@@ -25,6 +25,7 @@
 
 <%@include file="navbar.jsp"%>
 
+
 <div class="content" >
     <br>
     <h2>STAFF MASJID</h2>
