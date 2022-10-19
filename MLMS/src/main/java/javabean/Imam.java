@@ -1,4 +1,4 @@
-package com.example.mosque;
+package javabean;
 
 import java.io.Serializable;
 

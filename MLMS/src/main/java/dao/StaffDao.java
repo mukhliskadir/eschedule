@@ -1,12 +1,11 @@
-package com.example.mosque;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.*;
+import javabean.Staff;
+import javabean.Imam;
 
 import static java.lang.System.out;
 

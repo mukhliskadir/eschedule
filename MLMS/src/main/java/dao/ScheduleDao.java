@@ -1,10 +1,11 @@
-package com.example.mosque;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import static java.lang.System.out;
+import javabean.Schedule;
 
 public class ScheduleDao {
 		String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";

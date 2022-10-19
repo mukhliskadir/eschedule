@@ -1,49 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="java.sql.Connection" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-         <%@include file="navbar.jsp"%>
-   
-   
+
+<!-------------------GET PARAMETER FROM SEARCH (addSchedule.jsp)----------------------------->
  <%
- Class.forName("org.postgresql.Driver");
-	String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
-    String user = "ocetdbspxioaak";
-    String pass = "046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e";
- 
  String startDate = request.getParameter("fDate");
  String toDate = request.getParameter("tDate");
- Connection con=DriverManager.getConnection(dbURL, user, pass);
- Statement stmt = con.createStatement();
- String sql= "select scheduleid,scheduledate,scheduletime,speakername,topicname,topictheme from schedule s join speaker q on s.speakerid = q.speakerid join topic t on s.topicid = t.topicid where scheduledate >= TO_DATE('"+startDate+"','YYYY-MM-DD') AND scheduledate <= TO_DATE('"+toDate+"','YYYY-MM-DD') order by scheduleid ";
  %>
- <sql:setDataSource var="ic" driver="org.postgresql.Driver"
-         url="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
-         user = "ocetdbspxioaak"
-         password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
-<sql:query dataSource="${ic}" var="oc">
-	 <%=sql %>
+<!------------------------------DATABASE CONNECTION ----------------------------------------->
+ 
+<sql:setDataSource 
+		var		 ="eschedule" 
+		driver   ="org.postgresql.Driver"
+		url		 ="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
+		user 	 ="ocetdbspxioaak"
+		password ="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"
+/>
+<sql:query dataSource="${eschedule}" var="schedule">
+	SELECT scheduleid,scheduledate,scheduletime,speakername,topicname,topictheme 
+	FROM schedule s 
+	JOIN speaker q 
+	on s.speakerid = q.speakerid 
+	JOIN topic t 
+	on s.topicid = t.topicid 
+	WHERE scheduledate >= '<%=startDate%>' 
+	AND scheduledate <= '<%=toDate%>' 
+	ORDER BY scheduleid 
 </sql:query>
 
+<body>
+
+<!-----------------------------------NAVIGATION BAR------------------------------------------>
+
+<%@include file="navbar.jsp"%>
+
+<!------------------------------------------------------------------------------------------->
+
+  
   <div class="content" ><br>
     
          <h2><%=startDate %> HINGGA <%=toDate %></h2>
          
-          
+<!-----------------------------------TABLE HEADER----------------------------------------------->
+    
   <div style="overflow-x:auto;">
  
 <table id="main">
@@ -60,7 +62,9 @@
                
                </tr>
 
-<c:forEach var="result" items="${oc.rows}">
+<!-----------------------------------TABLE DATA----------------------------------------------->
+
+<c:forEach var="result" items="${schedule.rows}">
                   <tr>
                   	<c:if test="${result.scheduletime=='Dhuha'}">
     				  <td style="background-color: #e6ffcc;">${result.scheduletime}</td>
@@ -127,10 +131,11 @@
 	</tbody>
 </table>
           </div>
-       <div id="mybutton" class="button">
-  <form >
-   	<button    type="submit" formaction="senaraiJadual.jsp">UBAH JADUAL</button>
-</form>
+          
+<!-------------------------------------TO EDIT BUTTON---------------------------------------------->
+          
+<div id="mybutton" class="button">
+  <form ><button    type="submit" formaction="senaraiJadual.jsp">UBAH JADUAL</button></form>
 </div>
 </div>
 
@@ -140,8 +145,5 @@
 tr{width:30px;}
 </style>
 
-<script type="text/javascript">
 
-
-</script>
 </html>

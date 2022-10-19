@@ -1,34 +1,44 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
 <!DOCTYPE html>
 <html>
-   <head>
-      <title></title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css" />
-      <script src="https://kit.fontawesome.com/9bff21277a.js" crossorigin="anonymous"></script>
-   </head>
    <body>
-      <sql:setDataSource var="ic" driver="org.postgresql.Driver"
-         url="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
-         user = "ocetdbspxioaak"
-         password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
-         
-      <sql:query dataSource="${ic}" var="oc">
-         SELECT * from speaker where speakerid>0
-      </sql:query>
-      <sql:query dataSource="${ic}" var="oe">
-         SELECT * from topic where topicid>0
-      </sql:query>
+ 
+<!------------------------------DATABASE CONNECTION ----------------------------------------->
+
+<sql:setDataSource 
+		var		 ="eschedule" 
+		driver   ="org.postgresql.Driver"
+		url		 ="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
+		user 	 ="ocetdbspxioaak"
+		password ="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"
+/>
+     
+<sql:query dataSource="${eschedule}" var="oc">
+   SELECT * 
+   FROM speaker 
+   WHERE speakerid>0
+</sql:query>
+
+<sql:query dataSource="${eschedule}" var="oe">
+   SELECT * 
+   FROM topic 
+   WHERE topicid>0
+</sql:query>
       
+<!-----------------------------------NAVIGATION BAR------------------------------------------>
 
       <%@include file="navbar.jsp"%>
+
+<!------------------------------------------------------------------------------------------->
 
       <div class="content">
          <br />
          <h2>JADUAL</h2>
+<!------------------------------------SEARCH FORM--------------------------------------------->
+
          <form method="post" action="viewSchedule.jsp">
 		<input type="date" name="fDate"> HINGGA
 		<input type="date" name="tDate">
@@ -36,7 +46,8 @@
             <button  class="action"  type="submit" >CARI</button>
     </form>
     
-      
+<!-----------------------------------SCHEDULE FORM----------------------------------------------->
+     
          <form class="speaker" method="post" action="ScheduleServlet">
             <div class="schedulee">
                <table class="jaduall">
@@ -366,58 +377,7 @@
          <br />
          <br />
       </div>
-      <style type="text/css">
-         h3 {
-            color: black;
-         }
-         #myInput {
-            display: inline-block;
-            width: 500px;
-         }
-         .tarikh {
-            margin-top: 2 0px;
-         }
-         input[type="date"] {
-            height: 30px;
-            width: 200px;
-            margin: 20px;
-            background-color: #f9ebd1;
-         }
-         .column-left {
-            float: left;
-            width: 14%;
-            text-align: center;
-            margin: 0;
-         }
-         .column-right {
-            float: right;
-            width: 43%;
-            text-align: center;
-            background-color: #9c7e5a;
-            margin: 0;
-         }
-         .column-center {
-            display: inline-block;
-            width: 43%;
-            text-align: center;
-            background-color: #eb9834;
-            margin: 0;
-         }
-         .schedulee {
-            width: 94%;
-         }
-         select {
-            height: 40px;
-         }
-         th {
-            text-align: center;
-         }
-      </style>
+   
    </body>
-   <script type="text/javascript">
-      {
-         var dt = new Date();
-         document.getElementById("datetime").innerHTML = dt.toLocaleString();
-      }
-   </script>
+   
 </html>

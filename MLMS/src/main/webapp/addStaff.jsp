@@ -1,29 +1,36 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/9bff21277a.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
 <body>
-<sql:setDataSource var="MLMS" driver="org.postgresql.Driver"
-         url="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
-         user = "ocetdbspxioaak"
-         password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
-         
-      <sql:query dataSource="${MLMS}" var="staff">
-         SELECT * from staff
+
+<!------------------------------DATABASE CONNECTION ----------------------------------------->
+
+<sql:setDataSource 
+		var		 ="eschedule" 
+		driver   ="org.postgresql.Driver"
+		url		 ="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
+		user 	 ="ocetdbspxioaak"
+		password ="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"
+/>
+     
+      <sql:query dataSource="${eschedule}" var="staff">
+         SELECT * 
+         FROM staff
       </sql:query>
 
-<%@include file="navbar.jsp"%>
+<!-----------------------------------NAVIGATION BAR------------------------------------------>
+
+      <%@include file="navbar.jsp"%>
+
+<!------------------------------------------------------------------------------------------->
 <div class="content">
     <br>
     <h2>URUS AKAUN</h2>
+    
+<!----------------------------------------FORM----------------------------------------------->
+    
     <div class="staffform">
         <form class="staff" method="post" action="StaffServlet"  enctype="multipart/form-data">
         	<div class="dataa">
@@ -72,23 +79,22 @@
             </div>
         </form>
     </div>
-     <div class="staffform">
+    
+ <!-----------------------------------DISPLAY IMAGE------------------------------------------->
+ 
+<div class="staffform">
  <div class="divposter">
  	<div class="dataa">
       <p><img id="output" style="height:260px;" /></p>
     </div>
-      </div>
-      </div>
+ </div>
 </div>
-<br><br><br>
-</body>
-<script type="text/javascript">
+      
+<!------------------------------------------------------------------------------------------->
 
-var loadFile = function(event) {
-	  var image = document.getElementById('output');
-	  image.src = URL.createObjectURL(event.target.files[0]);
-	};
-</script>
+</div>
+</body>
+
 <style type="text/css">
   h3{color: black;}
   #myInput{display: inline-block;width: 500px ;}

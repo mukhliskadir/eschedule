@@ -1,0 +1,45 @@
+h3 {
+   color: black;
+}
+#myInput {
+   display: inline-block;
+   width: 500px;
+}
+.tarikh {
+   margin-top: 2 0px;
+}
+input[type="date"] {
+   height: 30px;
+   width: 200px;
+   margin: 20px;
+   background-color: #f9ebd1;
+}
+.column-left {
+   float: left;
+   width: 14%;
+   text-align: center;
+   margin: 0;
+}
+.column-right {
+   float: right;
+   width: 43%;
+   text-align: center;
+   background-color: #9c7e5a;
+   margin: 0;
+}
+.column-center {
+   display: inline-block;
+   width: 43%;
+   text-align: center;
+   background-color: #eb9834;
+   margin: 0;
+}
+.schedulee {
+   width: 94%;
+}
+select {
+   height: 40px;
+}
+th {
+   text-align: center;
+}

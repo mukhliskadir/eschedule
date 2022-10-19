@@ -1,11 +1,10 @@
-package com.example.mosque;
-
-
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javabean.Announcement;
 
 public class AnnouncementDao {
 	String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
