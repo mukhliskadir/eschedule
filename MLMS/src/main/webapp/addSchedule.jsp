@@ -57,7 +57,7 @@
                   <tr>
                      <td rowspan="2" style="width: 10%;text-align:center;">
                      	AHAD<br>
-                        <input type="date" name="scDate" value="" />
+                        <input type="date" name="scDate" value="" required/>
                      </td>
                      <td>
                         <select name="scSpeaker">
@@ -98,7 +98,7 @@
                   </tr>
                   
                    <td rowspan="2" style="width: 10%;text-align:center;">
-                    	ISNIN<br> <input type="date" name="scDate2" value="" />
+                    	ISNIN<br> <input type="date" name="scDate2" value="" required/>
                      </td>
                      <td>
                         <select name="scSpeaker2">
@@ -140,7 +140,7 @@
                   
                    <td rowspan="2" style="width: 10%;text-align:center;">
                      	SELASA<br>
-                        <input type="date" name="scDate3" value="" />
+                        <input type="date" name="scDate3" value="" required />
                      </td>
                      <td>
                         <select name="scSpeaker3">
@@ -182,7 +182,7 @@
                   
                    <td rowspan="2" style="width: 10%;text-align:center;">
                      	RABU<br>
-                        <input type="date" name="scDate4" value="" />
+                        <input type="date" name="scDate4" value="" required />
                      </td>
                      <td>
                         <select name="scSpeaker4">
@@ -224,7 +224,7 @@
                   
                    <td rowspan="2" style="width: 10%;text-align:center;">
                      	KHAMIS<br>
-                        <input type="date" name="scDate5" value="" />
+                        <input type="date" name="scDate5" value="" required />
                      </td>
                      <td>
                         <select name="scSpeaker5">
@@ -266,7 +266,7 @@
                   
                    <td rowspan="2" style="width: 10%;text-align:center;">
                      	JUMAAT<br>
-                        <input type="date" name="scDate6" value="" />
+                        <input type="date" name="scDate6" value="" required />
                      </td>
                      <td>
                         <select name="scSpeaker6">
@@ -308,7 +308,7 @@
                   
                    <td rowspan="2" style="width: 10%;text-align:center;">
                      	SABTU<br>
-                        <input type="date" name="scDate7" value="" />
+                        <input type="date" name="scDate7" value="" required/>
                      </td>
                      <td>
                         <select name="scSpeaker7">
