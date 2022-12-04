@@ -27,7 +27,7 @@
          password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
          
       <sql:query dataSource="${ic}" var="oc">
-         SELECT row_number() over (order by announcementid)   "rank",announcementpicture,announcementid,announcementtitle,announcementdesc,to_char(announcementdate,'YYYY-MM-DD')"announcementdate",announcementtime from announcement
+         SELECT row_number() over (order by announcementid)   "rank",announcementpicture,announcementid,announcementtitle,announcementdesc,to_char(announcementdate,'YYYY-MM-DD')"announcementdate",announcementtime,announcementstatus from announcement
       </sql:query>
   
       
@@ -51,6 +51,7 @@
                   <th onclick="sortTable(2)" style="width: 350px;">Tajuk</th>
                   <th onclick="sortTable(2)" style="width: 460px;">Deskripsi</th>
                   <th onclick="sortTable(4)" style="width: 250px;">Tarikh & Masa</th>
+                  <th onclick="sortTable(4)" style="width: 250px;">Status</th>
                   <th style="width: 100px;">Action</th>
                </tr>
                
@@ -74,6 +75,9 @@
                         <br>
                         Masa	:
                         <c:out value="${result.announcementtime}"/>
+                     </td>
+                      <td class="id">
+                        <c:out value="${result.announcementstatus}"/>
                      </td>
                      <td>
                         <form method="post">
