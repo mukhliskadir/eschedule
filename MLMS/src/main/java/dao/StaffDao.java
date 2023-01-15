@@ -10,9 +10,9 @@ import javabean.Imam;
 import static java.lang.System.out;
 
 public class StaffDao {
-	String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
-    String user = "ocetdbspxioaak";
-    String pass = "046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e";
+	String dbURL = "jdbc:postgresql://ep-winter-moon-258448.ap-southeast-1.aws.neon.tech/neondb";
+    String user = "mukhliskadir";
+    String pass = "NGx9KZVkQ3am";
     
     protected Connection getConnection() {
         Connection con = null;

@@ -21,18 +21,16 @@
          <button type="delete" class="yes">BUANG</button>
       </div>
       
-    <sql:setDataSource var="ic" driver="org.postgresql.Driver"
-         url="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
-         user = "ocetdbspxioaak"
-         password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
-         
-      <sql:query dataSource="${ic}" var="oc">
-         SELECT row_number() over (order by announcementid)   "rank",announcementpicture,announcementid,announcementtitle,announcementdesc,to_char(announcementdate,'YYYY-MM-DD')"announcementdate",announcementtime,announcementstatus from announcement
-      </sql:query>
+    
+    
   
+      <%@include file="database.jsp"%>
       
       <%@include file="navbar.jsp"%>
       
+        <sql:query dataSource="${eschedule}" var="oc">
+         SELECT row_number() over (order by announcementid)   "rank",announcementpicture,announcementid,announcementtitle,announcementdesc,to_char(announcementdate,'YYYY-MM-DD')"announcementdate",announcementtime,announcementstatus from announcement
+      </sql:query>
       <div class="content" ><br>
       
          <h2>PENGUMUMAN</h2>

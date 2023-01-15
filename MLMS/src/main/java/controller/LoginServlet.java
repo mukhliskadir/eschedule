@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import jakarta.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
+     * @see HttpServlet#HttpS	ervlet()
      */
     public LoginServlet() {
         super();
@@ -97,9 +98,9 @@ private void stafflogin(HttpServletRequest request, HttpServletResponse response
     try {
 
         Class.forName("org.postgresql.Driver");
-        String dbURL = "jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und";
-	    String user = "ocetdbspxioaak";
-	    String pass = "046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e";
+        String dbURL = "jdbc:postgresql://ep-winter-moon-258448.ap-southeast-1.aws.neon.tech/neondb";
+	    String user = "mukhliskadir";
+	    String pass = "NGx9KZVkQ3am";
 	    
         Connection con = DriverManager.getConnection(dbURL, user, pass);
 

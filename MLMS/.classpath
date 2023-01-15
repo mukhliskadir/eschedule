@@ -30,7 +30,10 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Download/jakarta.servlet.jsp.jstl-api-1.2.7.jar"/>
-	<classpathentry kind="lib" path="D:/Download/jakarta.servlet.jsp.jstl-1.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/sdd/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/sdd/standard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/sdd/postgresql-42.3.6.jar"/>
+	<classpathentry kind="lib" path="D:/Download/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/Download/jakarta.servlet.jsp.jstl-api-2.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
