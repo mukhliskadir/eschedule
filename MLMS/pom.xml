@@ -90,6 +90,18 @@
         </plugins>
     </build>
     <profiles>
+        <profile>
+      <id>openshift</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.jkube</groupId>
+            <artifactId>openshift-maven-plugin</artifactId>
+            <version>${openshift-maven-plugin.version}</version>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
      <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
      <!-- Use this profile for any OpenShift specific customization your app will need. -->
