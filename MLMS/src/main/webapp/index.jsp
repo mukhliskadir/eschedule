@@ -8,6 +8,7 @@
 <%@ page import="java.sql.Connection" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -59,9 +60,9 @@
    
    
  <sql:setDataSource var="MLMS" driver="org.postgresql.Driver"
-         url="jdbc:postgresql://ec2-3-234-131-8.compute-1.amazonaws.com/d19mjejga32und"
-         user = "ocetdbspxioaak"
-         password="046d2c84c24f70b0f1b8cf071d97fe00efe0700a42909777604ad0298b5bec3e"/>
+         url="jdbc:postgresql://ep-winter-moon-258448.ap-southeast-1.aws.neon.tech/neondb"
+         user = "mukhliskadir"
+         password="NGx9KZVkQ3am"/>
          
 <sql:query dataSource="${MLMS}" var="oc">
 	select scheduleid,scheduledate,scheduletime,speakername,topicname,topictheme
